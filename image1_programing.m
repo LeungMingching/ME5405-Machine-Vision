@@ -21,13 +21,18 @@ end
 im1_ori = double(im1_ori);
 
 %display the image
-
-imshow(im1_ori);
+figure('name','original image'), imshow(im1_ori, []);
 
 %thresholding
+threshold = 5;
 im1_thr= zeros(64);
 for j = 1:64
     for i = 1:64
-        if 
+        if im1_ori(i,j) < threshold
+            im1_thr(i,j)= 0;
+        else
+            im1_thr(i,j)= 1;
+        end
     end
 end
+figure('name','thresholding'), imshow(im1_thr,[]);
