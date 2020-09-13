@@ -7,6 +7,7 @@ clc;
 fileID = fopen('charact1.txt');
 im1_ori = fscanf(fileID,'%s');
 im1_ori = reshape(im1_ori, [64,64]);
+im1_ori = im1_ori';
 fclose(fileID);
 
 %convert each element from 32 base to dec
